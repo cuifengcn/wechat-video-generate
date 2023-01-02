@@ -19,4 +19,6 @@ ___
 ![](docs/5.png)
 
 ### 参考项目
-[adsda](http://baidu.com)
+[short-video-generate](https://github.com/ayuLiao/short-video-generate)
+
+[weixin-chat](https://gitee.com/lifeixue/weixin-chat)
