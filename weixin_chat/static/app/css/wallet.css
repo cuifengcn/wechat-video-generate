@@ -1,0 +1,22 @@
+.wallet .wallet-list {
+	display: flex;
+	flex-direction: row;
+}
+.wallet .wallet-list .list-item {
+	flex: 1;
+	text-align: center;
+}
+.wallet .wallet-list .item-logo {
+	width: 60px;
+	height: 60px;
+}
+.wallet .wallet-list .item-name {
+	font-size: 14px;
+}
+.wallet .wallet-service {
+    margin: 15px 0;
+    font-size: 16px;
+}
+.wallet .wallet-service span {
+    color: red;
+}

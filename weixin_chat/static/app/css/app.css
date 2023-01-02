@@ -1,0 +1,2414 @@
+@import 'jquery.range.css';
+body,
+html {
+    height: 100%;
+    font-family: 'SF Pro', 'PingFang SC'
+}
+
+a:active,
+a:focus,
+a:hover {
+    text-decoration: none
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 600;
+    src: url(../fonts/sf-pro-text_semibold.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 500;
+    src: url(../fonts/sf-pro-text_medium.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: 'SF Pro';
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/sf-pro-text_regular.woff2) format("woff2")
+}
+
+@font-face {
+    font-family: SansStdRegular;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/SansStdRegular.ttf)
+}
+
+@font-face {
+    font-family: SansStdMedium;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/SansStdMedium.ttf)
+}
+
+@font-face {
+    font-family: SansStdBold;
+    font-style: normal;
+    font-weight: 400;
+    src: url(../fonts/SansStdBold.ttf)
+}
+
+.wrapper {
+    position: relative;
+    height: 100%
+}
+
+li,
+ul {
+    list-style: none;
+    margin: 0;
+    padding: 0
+}
+
+.btn-round {
+    border-radius: 1000px
+}
+
+.v-logo {
+    height: 35px;
+    flex-wrap: wrap;
+    display: flex;
+    align-items: center;
+    width: 230px;
+    transition: transform .3s ease-in-out, width .3s ease-in-out;
+    overflow: hidden
+}
+
+.sidebar-collapse .navbar-brand .v-logo {
+    width: 50px
+}
+
+.v-logo i {
+    width: 35px;
+    height: 35px;
+    background: url(../images/logo.png) no-repeat;
+    background-size: 35px;
+    margin-left: 7px
+}
+
+.v-logo span {
+    font-size: 18px;
+    color: #fff;
+    margin-left: 10px;
+    white-space: nowrap
+}
+
+.sidebar-collapse .navbar-brand .v-logo span {
+    display: none
+}
+
+.main-header .navbar-brand {
+    background: #263238
+}
+
+.main-header .navbar {
+    min-height: 50px;
+    border-radius: 0;
+    border: none
+}
+
+.main-header .navbar-header {
+    background: rgba(255, 255, 255, .07);
+    height: 50px
+}
+
+.main-header .navbar-brand {
+    height: 50px;
+    line-height: 30px;
+    text-align: center;
+    font-size: 20px;
+    padding: 10px 0;
+    color: #fff
+}
+
+.main-header .navbar-brand .logo {
+    width: 230px;
+    display: inline-block
+}
+
+.main-header .navbar-brand .logo-mini {
+    width: 50px;
+    display: none
+}
+
+.sidebar-collapse .navbar-brand .logo {
+    display: none
+}
+
+.sidebar-collapse .navbar-brand .logo-mini {
+    display: block
+}
+
+.main-header .navbar-nav>li>a {
+    height: 50px;
+    line-height: 30px;
+    color: #fff
+}
+
+.main-header .navbar-nav>li>a:focus,
+.main-header .navbar-nav>li>a:hover {
+    background: rgba(255, 255, 255, .07)
+}
+
+.main-header .navbar-right {
+    margin-right: 0
+}
+
+.main-header .avatar {
+    height: 30px;
+    width: 30px;
+    border-radius: 50%;
+    vertical-align: top
+}
+
+.navbar-toggle {
+    position: absolute;
+    margin: 0;
+    padding: 0;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    border: 0
+}
+
+.main-sidebar {
+    position: absolute;
+    top: 0;
+    left: 0;
+    padding-top: 50px;
+    min-height: 100%;
+    width: 230px;
+    z-index: 810;
+    color: rgba(163, 175, 183, .9);
+    background: #263238;
+    transition: transform .3s ease-in-out, width .3s ease-in-out
+}
+
+.main-sidebar .sidebar {
+    padding-bottom: 10px
+}
+
+.sidebar-menu>li {
+    position: relative
+}
+
+.sidebar-menu li.header {
+    padding: 10px 25px 10px 15px;
+    font-size: 12px;
+    color: #76838f
+}
+
+.sidebar-menu a {
+    text-decoration: none;
+    color: rgba(163, 175, 183, .9)
+}
+
+.sidebar-menu a>.icon {
+    width: 20px;
+    display: inline-block
+}
+
+.sidebar-menu>li>a {
+    padding: 12px 5px 12px 15px;
+    display: block;
+    position: relative
+}
+
+.sidebar-menu>li.active>a,
+.sidebar-menu>li.menu-open>a,
+.sidebar-menu>li:focus>a,
+.sidebar-menu>li:hover>a {
+    color: #fff;
+    background: #242f35
+}
+
+.sidebar-menu>li.active {
+    border-left-color: #039BE5
+}
+
+.sidebar-menu li>a>.pull-right-container {
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    margin-top: -9px
+}
+
+.sidebar-menu li>a>.pull-right-container>.icon-angle-left {
+    width: auto;
+    height: auto;
+    padding: 0;
+    margin-right: 10px;
+    transition: transform .5s ease
+}
+
+.sidebar-menu .menu-open>a>.pull-right-container>.icon-angle-left::before {
+    transform: rotate(-90deg)
+}
+
+.sidebar-menu>li>.treeview-menu {
+    display: none;
+    background: #242f35
+}
+
+.sidebar-menu>li.active>.treeview-menu {
+    display: block
+}
+
+.treeview-menu {
+    padding-left: 3px
+}
+
+.treeview-menu>li>a {
+    padding: 5px 5px 5px 15px;
+    display: block
+}
+
+.treeview-menu>li.active>a,
+.treeview-menu>li>a:focus,
+.treeview-menu>li>a:hover {
+    color: #fff;
+    background: rgba(0, 0, 0, .06)
+}
+
+.sidebar-collapse .main-sidebar {
+    transform: translate(0, 0);
+    width: 50px !important;
+    z-index: 850
+}
+
+.sidebar-collapse .main-sidebar .user-panel>.info,
+.sidebar-collapse .sidebar-form,
+.sidebar-collapse .sidebar-menu li.header,
+.sidebar-collapse .sidebar-menu>li>.treeview-menu,
+.sidebar-collapse .sidebar-menu>li>a>span {
+    display: none !important
+}
+
+.sidebar-collapse .sidebar-menu>li:hover>a>span {
+    top: 0;
+    margin-left: -3px;
+    padding: 12px 5px 12px 20px;
+    background-color: inherit
+}
+
+.sidebar-collapse .sidebar-menu>li:hover>.treeview-menu,
+.sidebar-collapse .sidebar-menu>li:hover>a>span:not(.pull-right-container) {
+    display: block !important;
+    position: absolute;
+    width: 180px;
+    left: 50px;
+    margin-left: -3px
+}
+
+.content-wrapper {
+    min-height: 100%;
+    margin-left: 230px;
+    z-index: 800
+}
+
+.sidebar-collapse .content-wrapper {
+    margin-left: 50px
+}
+
+.content-header .breadcrumb {
+    margin-bottom: 0
+}
+
+.info-box {
+    display: block;
+    min-height: 90px;
+    width: 100%;
+    border-radius: 4px;
+    margin-bottom: 15px
+}
+
+.info-box-icon {
+    border-top-left-radius: 4px;
+    border-top-right-radius: 0;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 4px;
+    display: block;
+    float: left;
+    height: 90px;
+    width: 90px;
+    text-align: center;
+    font-size: 45px;
+    line-height: 90px
+}
+
+.info-box-icon .icon {
+    text-align: center;
+    font-size: 45px
+}
+
+.info-box-content {
+    padding: 22px 10px;
+    margin-left: 90px
+}
+
+.info-box-text {
+    display: block;
+    font-size: 14px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.info-box-number {
+    display: block;
+    font-weight: 700;
+    font-size: 18px
+}
+
+.table-info {
+    margin-bottom: 0
+}
+
+.table-info td:nth-child(2n-1) {
+    font-weight: 600
+}
+
+.page-copyright {
+    margin-top: 60px;
+    font-size: .858rem;
+    color: #37474f;
+    letter-spacing: 1px
+}
+
+.page-copyright.page-copyright-inverse {
+    color: #fff
+}
+
+.page-login {
+    padding: 30px
+}
+
+.page-login .panel {
+    width: 400px;
+    margin: 0 auto
+}
+
+.page-login .panel-body {
+    padding: 50px 40px 40px
+}
+
+.page-login .logo {
+    font-size: 20px;
+    text-align: center
+}
+
+.page-login .logo img {
+    width: 36px;
+    height: 36px
+}
+
+.page-login .logo a {
+    text-decoration: none;
+    margin-top: 8px;
+    font-size: 28px;
+    color: #37474f;
+    text-shadow: rgba(0, 0, 0, .15) 0 0 1px
+}
+
+.page-login form {
+    margin-top: 45px;
+    color: #76838f
+}
+
+.page-login form .form-group {
+    margin: 20px 0 40px 0
+}
+
+.page-login form .form-control {
+    height: 36px;
+    border-top: 0;
+    border-left: 0;
+    border-right: 0;
+    border-radius: 0;
+    box-shadow: none
+}
+
+.page-login form .btn-lg {
+    padding: 12px 16px;
+    font-size: 15px
+}
+
+@media (min-width:767px) {
+    .sidebar-toggle {
+        display: none
+    }
+}
+
+@media (max-width:767px) {
+    .navbar-nav:not(.navbar-right)>li:first-child {
+        display: none
+    }
+
+    .main-sidebar {
+        transform: translate(-230px, 0)
+    }
+
+    .sidebar-open .main-sidebar {
+        transform: translate(0, 0)
+    }
+
+    .content-wrapper {
+        margin-left: 0
+    }
+
+    .navbar-brand {
+        width: 100%
+    }
+
+    .sidebar-toggle {
+        color: #fff;
+        position: absolute !important;
+        top: 15px;
+        left: 15px
+    }
+
+    .main-header .navbar-right {
+        margin-right: -10px
+    }
+
+    .page-login {
+        padding: 10px
+    }
+
+    .page-login .panel {
+        width: 100%
+    }
+
+    .page-login .panel .panel-body {
+        padding: 25px 20px 20px
+    }
+}
+
+.table td {
+    vertical-align: middle
+}
+
+.page-error {
+    padding: 30px;
+    color: #76838f
+}
+
+.page-error header h1 {
+    font-size: 10em;
+    font-weight: 400;
+    color: #37474f
+}
+
+.page-error header p {
+    margin-bottom: 30px;
+    font-size: 30px;
+    text-transform: uppercase
+}
+
+.page-error .btn {
+    padding: 6px 20px
+}
+
+.steps {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 22px
+}
+
+.step {
+    position: relative;
+    padding: 12px 20px;
+    margin: 0;
+    font-size: inherit;
+    color: #a3afb7;
+    vertical-align: top;
+    background-color: #f5f5f5;
+    border-radius: 0
+}
+
+.step-icon {
+    float: left;
+    margin-right: .5em;
+    font-size: 20px
+}
+
+.step-number {
+    position: absolute;
+    top: 50%;
+    left: 20px;
+    width: 40px;
+    height: 40px;
+    font-size: 24px;
+    line-height: 40px;
+    color: #fff;
+    text-align: center;
+    background: #ddd;
+    border-radius: 50%;
+    -webkit-transform: translateY(-50%);
+    transform: translateY(-50%)
+}
+
+.step-number~.step-desc {
+    min-height: 40px;
+    margin-left: 50px
+}
+
+.step-title {
+    margin-bottom: 0;
+    font-size: 15px;
+    color: #526069
+}
+
+.step-desc {
+    text-align: left
+}
+
+.step-desc p {
+    margin-bottom: 0;
+    font-size: 11px
+}
+
+.steps-vertical {
+    -ms-flex-direction: column;
+    flex-direction: column
+}
+
+.step.active,
+.step.current {
+    color: #fff;
+    background-color: #039BE5
+}
+
+.step.active .step-title,
+.step.current .step-title {
+    color: #fff
+}
+
+.step.active .step-number,
+.step.current .step-number {
+    color: #039BE5;
+    background-color: #fff
+}
+
+.step.disabled {
+    color: #ccd5db;
+    pointer-events: none;
+    cursor: auto
+}
+
+.step.disabled .step-title {
+    color: #ccd5db
+}
+
+.step.disabled .step-number {
+    background-color: #ccd5db
+}
+
+.step.error {
+    color: #fff;
+    background-color: #ea644a
+}
+
+.step.error .step-title {
+    color: #fff
+}
+
+.step.error .step-number {
+    color: #ea644a;
+    background-color: #fff
+}
+
+.step.done {
+    color: #fff;
+    background-color: #38b03f
+}
+
+.step.done .step-title {
+    color: #fff
+}
+
+.step.done .step-number {
+    color: #38b03f;
+    background-color: #fff
+}
+
+.pearls {
+    display: -ms-flexbox;
+    display: flex;
+    -ms-flex-wrap: wrap;
+    flex-wrap: wrap;
+    margin: 0 0 22px
+}
+
+.pearl {
+    position: relative;
+    padding: 0;
+    margin: 0;
+    text-align: center
+}
+
+.pearl:after,
+.pearl:before {
+    position: absolute;
+    top: 18px;
+    z-index: 0;
+    width: 50%;
+    height: 4px;
+    content: "";
+    background-color: #f5f5f5
+}
+
+.pearl:before {
+    left: 0
+}
+
+.pearl:after {
+    right: 0
+}
+
+.pearl:first-child:before,
+.pearl:last-child:after {
+    display: none !important
+}
+
+.pearl-icon,
+.pearl-number {
+    position: relative;
+    z-index: 1;
+    display: inline-block;
+    width: 36px;
+    height: 36px;
+    line-height: 32px;
+    color: #fff;
+    text-align: center;
+    background: #ddd;
+    border: 2px solid #ddd;
+    border-radius: 50%
+}
+
+.pearl-number {
+    font-size: 18px
+}
+
+.pearl-icon {
+    font-size: 18px
+}
+
+.pearl-title {
+    display: block;
+    margin-top: .5em;
+    margin-bottom: 0;
+    overflow: hidden;
+    color: #526069;
+    text-overflow: ellipsis;
+    white-space: nowrap
+}
+
+.pearl.active:after,
+.pearl.active:before,
+.pearl.current:after,
+.pearl.current:before {
+    background-color: #039BE5
+}
+
+.pearl.active .pearl-icon,
+.pearl.active .pearl-number,
+.pearl.current .pearl-icon,
+.pearl.current .pearl-number {
+    color: #039BE5;
+    background-color: #fff;
+    border-color: #039BE5;
+    -webkit-transform: scale(1.3);
+    transform: scale(1.3)
+}
+
+.pearl.disabled {
+    pointer-events: none;
+    cursor: auto
+}
+
+.pearl.disabled:after,
+.pearl.disabled:before {
+    background-color: #f3f7f9
+}
+
+.pearl.disabled .pearl-icon,
+.pearl.disabled .pearl-number {
+    color: #fff;
+    background-color: #ccd5db;
+    border-color: #ccd5db
+}
+
+.pearl.error:before {
+    background-color: #039BE5
+}
+
+.pearl.error:after {
+    background-color: #f3f7f9
+}
+
+.pearl.error .pearl-icon,
+.pearl.error .pearl-number {
+    color: #ea644a;
+    background-color: #fff;
+    border-color: #ea644a
+}
+
+.pearl.done:after,
+.pearl.done:before {
+    background-color: #039BE5
+}
+
+.pearl.done .pearl-icon,
+.pearl.done .pearl-number {
+    color: #fff;
+    background-color: #039BE5;
+    border-color: #039BE5
+}
+
+.label-pill {
+    padding: 1px 5px
+}
+
+.label.up {
+    position: relative;
+    top: -10px;
+    margin-left: -.9em;
+    border-radius: 15px
+}
+
+.checkbox-custom,
+.radio-custom {
+    position: relative;
+    display: block;
+    margin-top: 10px;
+    margin-bottom: 10px
+}
+
+.checkbox-inline,
+.radio-inline {
+    display: inline-block
+}
+
+.checkbox-custom label,
+.radio-custom label {
+    min-height: 22px;
+    margin-bottom: 0;
+    font-weight: 300;
+    cursor: pointer
+}
+
+.checkbox-custom input[type=checkbox],
+.radio-custom input[type=radio] {
+    position: absolute;
+    margin-top: 0;
+    margin-bottom: 0;
+    margin-left: -20px
+}
+
+.checkbox-custom.disabled label,
+.radio-custom.disabled label,
+fieldset[disabled] .checkbox-custom label,
+fieldset[disabled] .radio-custom label {
+    cursor: not-allowed
+}
+
+.input-group-addon .checkbox-custom,
+.input-group-addon .radio-custom {
+    margin: 0
+}
+
+.checkbox-custom {
+    padding-left: 20px
+}
+
+.checkbox-custom label {
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle
+}
+
+.checkbox-custom label:empty {
+    padding-left: 0
+}
+
+.checkbox-custom label::before {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+    content: "";
+    background-color: #fff;
+    border: 1px solid #e4eaec;
+    border-radius: .215rem;
+    transition: all .3s ease-in-out 0s
+}
+
+.checkbox-custom label::after {
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    padding-top: 1px;
+    margin-left: -20px;
+    font-size: 12px;
+    line-height: 20px;
+    color: #76838f;
+    text-align: center
+}
+
+.checkbox-custom input[type=radio],
+.checkbox-custom input[type=checkbox] {
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0
+}
+
+.checkbox-custom input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-custom input[type=radio]:checked+label::before,
+.checkbox-custom input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-custom input[type=checkbox]:checked+label::before {
+    border-color: #e4eaec;
+    border-width: 10px;
+    transition: all .3s ease-in-out 0s
+}
+
+.checkbox-custom input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-custom input[type=radio]:checked+label::after,
+.checkbox-custom input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-custom input[type=checkbox]:checked+label::after {
+    font-family: ZenIcon;
+    content: "\e60d"
+}
+
+.checkbox-custom input[type=radio]:disabled,
+.checkbox-custom input[type=checkbox]:disabled {
+    cursor: not-allowed
+}
+
+.checkbox-custom input[type=radio]:disabled+input[type=hidden]+label,
+.checkbox-custom input[type=radio]:disabled+label,
+.checkbox-custom input[type=checkbox]:disabled+input[type=hidden]+label,
+.checkbox-custom input[type=checkbox]:disabled+label {
+    opacity: .65
+}
+
+.checkbox-custom input[type=radio]:disabled+input[type=hidden]+label::before,
+.checkbox-custom input[type=radio]:disabled+label::before,
+.checkbox-custom input[type=checkbox]:disabled+input[type=hidden]+label::before,
+.checkbox-custom input[type=checkbox]:disabled+label::before {
+    cursor: not-allowed;
+    background-color: #f3f7f9;
+    border-color: #e4eaec;
+    border-width: 1px
+}
+
+.checkbox-custom.checkbox-circle label::before {
+    border-radius: 50%
+}
+
+.checkbox-custom.checkbox-inline {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.checkbox-inline+.checkbox-inline {
+    margin-left: 20px
+}
+
+.checkbox-default input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-default input[type=radio]:checked+label::before,
+.checkbox-default input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-default input[type=checkbox]:checked+label::before {
+    background-color: #fff;
+    border-color: #e4eaec;
+    border-width: 1px
+}
+
+.checkbox-default input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-default input[type=radio]:checked+label::after,
+.checkbox-default input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-default input[type=checkbox]:checked+label::after {
+    color: #3280fc
+}
+
+.checkbox-primary input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-primary input[type=radio]:checked+label::before,
+.checkbox-primary input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-primary input[type=checkbox]:checked+label::before {
+    background-color: #3280fc;
+    border-color: #3280fc
+}
+
+.checkbox-primary input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-primary input[type=radio]:checked+label::after,
+.checkbox-primary input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-primary input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-danger input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-danger input[type=radio]:checked+label::before,
+.checkbox-danger input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-danger input[type=checkbox]:checked+label::before {
+    background-color: #ea644a;
+    border-color: #ea644a
+}
+
+.checkbox-danger input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-danger input[type=radio]:checked+label::after,
+.checkbox-danger input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-danger input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-info input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-info input[type=radio]:checked+label::before,
+.checkbox-info input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-info input[type=checkbox]:checked+label::before {
+    background-color: #03b8cf;
+    border-color: #03b8cf
+}
+
+.checkbox-info input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-info input[type=radio]:checked+label::after,
+.checkbox-info input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-info input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-warning input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-warning input[type=radio]:checked+label::before,
+.checkbox-warning input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-warning input[type=checkbox]:checked+label::before {
+    background-color: #f1a325;
+    border-color: #f1a325
+}
+
+.checkbox-warning input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-warning input[type=radio]:checked+label::after,
+.checkbox-warning input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-warning input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-success input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-success input[type=radio]:checked+label::before,
+.checkbox-success input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-success input[type=checkbox]:checked+label::before {
+    background-color: #38b03f;
+    border-color: #38b03f
+}
+
+.checkbox-success input[type=radio]:checked+input[type=hidden]+label::after,
+.checkbox-success input[type=radio]:checked+label::after,
+.checkbox-success input[type=checkbox]:checked+input[type=hidden]+label::after,
+.checkbox-success input[type=checkbox]:checked+label::after {
+    color: #fff
+}
+
+.checkbox-sm {
+    padding-left: 18px
+}
+
+.checkbox-sm label {
+    padding-left: 8px
+}
+
+.checkbox-sm label:empty {
+    padding-left: 0
+}
+
+.checkbox-sm label::after,
+.checkbox-sm label::before {
+    width: 18px;
+    height: 18px;
+    margin-left: -18px
+}
+
+.checkbox-sm label::after {
+    font-size: 10px;
+    line-height: 18px
+}
+
+.checkbox-sm input[type=radio],
+.checkbox-sm input[type=checkbox] {
+    width: 18px;
+    height: 18px
+}
+
+.checkbox-sm input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-sm input[type=radio]:checked+label::before,
+.checkbox-sm input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-sm input[type=checkbox]:checked+label::before {
+    border-width: 9px
+}
+
+.checkbox-lg {
+    padding-left: 24px
+}
+
+.checkbox-lg label {
+    padding-left: 12px
+}
+
+.checkbox-lg label:empty {
+    padding-left: 0
+}
+
+.checkbox-lg label::after,
+.checkbox-lg label::before {
+    width: 24px;
+    height: 24px;
+    margin-left: -24px
+}
+
+.checkbox-lg label::after {
+    font-size: 14px;
+    line-height: 24px
+}
+
+.checkbox-lg input[type=radio],
+.checkbox-lg input[type=checkbox] {
+    width: 24px;
+    height: 24px
+}
+
+.checkbox-lg input[type=radio]:checked+input[type=hidden]+label::before,
+.checkbox-lg input[type=radio]:checked+label::before,
+.checkbox-lg input[type=checkbox]:checked+input[type=hidden]+label::before,
+.checkbox-lg input[type=checkbox]:checked+label::before {
+    border-width: 12px
+}
+
+.radio-custom {
+    padding-left: 20px
+}
+
+.radio-custom label {
+    position: relative;
+    display: inline-block;
+    padding-left: 10px;
+    vertical-align: middle
+}
+
+.radio-custom label:empty {
+    padding-left: 0
+}
+
+.radio-custom label::before {
+    position: absolute;
+    left: 0;
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-left: -20px;
+    content: "";
+    background-color: #fff;
+    border: 1px solid #e4eaec;
+    border-radius: 50%;
+    transition: border .3s ease-in-out 0s, color .3s ease-in-out 0s
+}
+
+.radio-custom label::after {
+    position: absolute;
+    top: 7px;
+    left: 7px;
+    display: inline-block;
+    width: 6px;
+    height: 6px;
+    margin-left: -20px;
+    content: " ";
+    background-color: transparent;
+    border: 2px solid #76838f;
+    border-radius: 50%;
+    transition: .1s cubic-bezier(.8, -.33, .2, 1.33);
+    -webkit-transform: scale(0, 0);
+    transform: scale(0, 0)
+}
+
+.radio-custom input[type=radio] {
+    z-index: 1;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+    opacity: 0
+}
+
+.radio-custom input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-custom input[type=radio]:checked+label::before {
+    border-color: #e4eaec;
+    border-width: 10px
+}
+
+.radio-custom input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-custom input[type=radio]:checked+label::after {
+    -webkit-transform: scale(1, 1);
+    transform: scale(1, 1)
+}
+
+.radio-custom input[type=radio]:disabled {
+    cursor: not-allowed
+}
+
+.radio-custom input[type=radio]:disabled+input[type=hidden]+label,
+.radio-custom input[type=radio]:disabled+label {
+    opacity: .65
+}
+
+.radio-custom input[type=radio]:disabled+input[type=hidden]+label::before,
+.radio-custom input[type=radio]:disabled+label::before {
+    cursor: not-allowed
+}
+
+.radio-custom.radio-inline {
+    display: inline-block;
+    margin-top: 0;
+    margin-bottom: 0
+}
+
+.radio-inline+.radio-inline {
+    margin-left: 20px
+}
+
+.radio-default input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-default input[type=radio]:checked+label::before {
+    background-color: #fff;
+    border-color: #e4eaec;
+    border-width: 1px
+}
+
+.radio-default input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-default input[type=radio]:checked+label::after {
+    border-color: #3280fc
+}
+
+.radio-primary input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-primary input[type=radio]:checked+label::before {
+    border-color: #3280fc
+}
+
+.radio-primary input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-primary input[type=radio]:checked+label::after {
+    border-color: #fff
+}
+
+.radio-danger input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-danger input[type=radio]:checked+label::before {
+    border-color: #ea644a
+}
+
+.radio-danger input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-danger input[type=radio]:checked+label::after {
+    border-color: #fff
+}
+
+.radio-info input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-info input[type=radio]:checked+label::before {
+    border-color: #03b8cf
+}
+
+.radio-info input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-info input[type=radio]:checked+label::after {
+    border-color: #fff
+}
+
+.radio-warning input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-warning input[type=radio]:checked+label::before {
+    border-color: #f1a325
+}
+
+.radio-warning input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-warning input[type=radio]:checked+label::after {
+    border-color: #fff
+}
+
+.radio-success input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-success input[type=radio]:checked+label::before {
+    border-color: #38b03f
+}
+
+.radio-success input[type=radio]:checked+input[type=hidden]+label::after,
+.radio-success input[type=radio]:checked+label::after {
+    border-color: #fff
+}
+
+.radio-sm {
+    padding-left: 18px
+}
+
+.radio-sm label {
+    padding-left: 8px
+}
+
+.radio-sm label:empty {
+    padding-left: 0
+}
+
+.radio-sm label::before {
+    width: 18px;
+    height: 18px;
+    margin-left: -20px
+}
+
+.radio-sm label::after {
+    top: 7px;
+    left: 7px;
+    width: 4px;
+    height: 4px;
+    margin-left: -20px;
+    border-width: 2px
+}
+
+.radio-sm input[type=radio] {
+    width: 18px;
+    height: 18px
+}
+
+.radio-sm input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-sm input[type=radio]:checked+label::before {
+    border-width: 9px
+}
+
+.radio-lg {
+    padding-left: 24px
+}
+
+.radio-lg label {
+    padding-left: 12px
+}
+
+.radio-lg label:empty {
+    padding-left: 0
+}
+
+.radio-lg label::before {
+    width: 24px;
+    height: 24px;
+    margin-left: -20px
+}
+
+.radio-lg label::after {
+    top: 8px;
+    left: 8px;
+    width: 8px;
+    height: 8px;
+    margin-left: -20px;
+    border-width: 2px
+}
+
+.radio-lg input[type=radio] {
+    width: 24px;
+    height: 24px
+}
+
+.radio-lg input[type=radio]:checked+input[type=hidden]+label::before,
+.radio-lg input[type=radio]:checked+label::before {
+    border-width: 12px
+}
+
+#pageHeader {
+	background: #3385ff;
+	color: #fff;
+	font-size: 20px;
+	padding: 10px 0;
+	text-align: center;
+	margin-bottom: 10px;
+}
+
+#pageHeader i {
+    width: 20px;
+    height: 20px;
+    line-height: 20px;
+    border-radius: 10px;
+    text-align: center;
+    z-index: 10;
+    top: 10px;
+    font-style: normal;
+    color: #fff;
+    background-color: #3280fc;
+    font-size: 12px
+}
+
+#pageHeader h3 {
+    height: 40px;
+    margin: 0;
+    padding: 0;
+    line-height: 40px
+}
+
+.view-setting {
+    padding: 20px 10px
+}
+
+.view-setting2 {
+    padding: 20px 0
+}
+
+.view-set-item {
+    min-height: 50px;
+    display: flex;
+    align-items: center
+}
+
+.view-set-item span {
+    width: 100px
+}
+
+.view-setting2 .view-set-item span {
+    width: 120px
+}
+
+.view-set-item select {
+    width: 70px;
+    margin-right: 5px
+}
+
+.view-set-item input[type=number],
+.view-set-item input[type=text] {
+    width: 200px;
+    margin-right: 5px
+}
+
+.my-radio {
+    display: flex;
+    align-items: center;
+    margin-right: 10px;
+    cursor: pointer
+}
+
+.my-radio input {
+    margin-top: 0;
+    margin-right: 3px
+}
+
+.edit-content {
+    display: flex;
+    padding-bottom: 100px
+}
+
+.tab {
+    flex: 1;
+    margin-right: 20px
+}
+
+.tab-content {
+    flex: 1
+}
+
+.phone-wrap {
+    width: 375px;
+    height: 812px
+}
+
+.phone-content {
+    transform: scale(.33333333);
+    transform-origin: 0 0;
+    border: 1px #f1f1f1 solid
+}
+
+.phone {
+    width: 1125px;
+    height: 2436px;
+    background-color: #ededed;
+    position: relative;
+    z-index: 998;
+    font-size: 36px
+}
+
+.phone-top {
+    position: relative;
+    z-index: 99999;
+    background-color: #ededed
+}
+
+.phone-top:after {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: .67px;
+    background: #d5d5d5;
+    overflow: hidden;
+    left: 0;
+    bottom: 2px
+}
+
+.phone-bg {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    overflow: hidden
+}
+
+.phone-bg img {
+    width: 100%;
+    flex: none
+}
+
+.phone-bg img.phone-bg-for-height {
+    width: auto;
+    max-width: none;
+    height: 100%
+}
+
+.iPhoneX {
+    width: 1125px;
+    height: 2436px;
+    background-color: #ededed;
+    position: fixed;
+    left: 0;
+    top: 0;
+    left: -99999px
+}
+
+.phone-bar {
+    height: 132px;
+    align-items: center;
+    display: flex;
+    padding: 0 43px 0 95px
+}
+
+.phone-nav {
+    height: 132px;
+    display: flex;
+    align-items: center;
+    padding: 0 50px;
+    position: relative
+}
+
+.phone-time {
+    font-size: 45px;
+    flex: 1;
+    font-weight: 600
+}
+
+.phone-sigle {
+    width: 54px;
+    height: 36px;
+    background: url(../images/bar/ios-single-4-dark.png) no-repeat;
+    margin-right: 6px;
+    text-indent: -9999px
+}
+
+.phone-sigle-v1 {
+    background-image: url(../images/bar/ios-single-1-dark.png)
+}
+
+.phone-sigle-v2 {
+    background-image: url(../images/bar/ios-single-2-dark.png)
+}
+
+.phone-sigle-v3 {
+    background-image: url(../images/bar/ios-single-3-dark.png)
+}
+
+.phone-sigle-v4 {
+    background-image: url(../images/bar/ios-single-4-dark.png)
+}
+
+.phone-wifi {
+    width: 63px;
+    height: 45px;
+    background: url(../images/bar/ios-wifi-3-dark.png) no-repeat;
+    margin-right: 6px;
+    text-indent: -9999px
+}
+
+.phone-wifi-s1 {
+    background-image: url(../images/bar/ios-wifi-1-dark.png)
+}
+
+.phone-wifi-s2 {
+    background-image: url(../images/bar/ios-wifi-2-dark.png)
+}
+
+.phone-wifi-v2 {
+    text-indent: 0;
+    background-image: none;
+    font-size: 36px;
+    font-weight: 500;
+    text-align: center;
+    height: auto
+}
+
+.phone-battery {
+    width: 75px;
+    height: 36px;
+    background: url(../images/bar/ios-battery-dark.png) no-repeat;
+    position: relative;
+    padding: 7px;
+    padding-right: 16px
+}
+
+.phone-battery.phone-battery-charge i {
+    width: 18px;
+    height: 36px;
+    background: url(../images/bar/ios-battery-charge-dark.png) no-repeat;
+    position: absolute;
+    left: 50%;
+    margin-left: -9px;
+    top: 50%;
+    margin-top: -18px
+}
+
+.phone-battery span {
+    position: absolute;
+    left: 7px;
+    right: 16px
+}
+
+.phone-battery span font {
+    height: 22px;
+    background: #000;
+    width: 50%;
+    display: block;
+    border-radius: 4px;
+    text-indent: -9999px
+}
+
+.phone-battery.phone-battery-charge span font {
+    background: #65c466
+}
+
+.phone-nav-left {
+    width: 150px;
+    position: relative
+}
+
+.phone-nav-left span {
+    position: absolute;
+    font-size: 36px;
+    height: 72px;
+    line-height: 72px;
+    background: #d5d5d5;
+    min-width: 72px;
+    border-radius: 36px;
+    text-align: center;
+    padding: 0 24px;
+    top: 50%;
+    margin-top: -36px;
+    left: 45px;
+    font-weight: 600
+}
+
+.phone-nav-center {
+    flex: 1;
+    display: flex;
+    justify-content: center
+}
+
+.phone-nav-center span {
+    font-size: 51px;
+    display: flex;
+    align-items: center;
+    font-weight: 500
+}
+
+.phone-nav-center span i {
+    width: 31px;
+    height: 42px;
+    background: url(../images/wechat-trans-earphone.png) no-repeat;
+    margin-left: 15px
+}
+
+.phone-nav-right {
+    width: 150px;
+    display: flex;
+    justify-content: flex-end
+}
+
+.phone-nav-back {
+    width: 27px;
+    height: 52px;
+    background: url(../images/wechat-nav-back.png) no-repeat;
+    text-indent: -9999px
+}
+
+.phone-nav-more {
+    width: 70px;
+    height: 12px;
+    background: url(../images/wechat-nav-right.png) no-repeat;
+    text-indent: -9999px
+}
+
+.phone-bottom {
+    background: #f6f6f6;
+    position: absolute;
+    bottom: 0;
+    width: 100%
+}
+
+.phone-bottom-bar {
+    height: 102px;
+    display: flex;
+    justify-content: center
+}
+
+.phone-bottom-bar i {
+    width: 402px;
+    height: 15px;
+    background: url(../images/phone-bottom-bar.png) no-repeat;
+    margin-top: 63px;
+    text-indent: -9999px
+}
+
+.phone-bottom-chat {
+    height: 167px
+}
+
+.btn-clear {
+    background-color: #ea644a;
+    border: 0;
+    outline: none;
+    padding: 5px 20px;
+    color: #fff;
+    border-radius: 3px;
+}
+
+.wechat-bottom {
+    display: flex;
+    align-items: center;
+    height: 100%
+}
+
+.wechat-bottom-icon {
+    width: 80px;
+    height: 80px;
+    text-indent: -9999px
+}
+
+.wechat-voice-icon {
+    background: url(../images/wechat-bottom-icon1.png) no-repeat;
+    margin-left: 32px
+}
+
+.wechat-emoji-icon {
+    background: url(../images/wechat-bottom-icon2.png) no-repeat
+}
+
+.wechat-more-icon {
+    background: url(../images/wechat-bottom-icon3.png) no-repeat;
+    margin: 0 32px 0 39px
+}
+
+.wechat-voice-say-icon {
+    background: url(../images/wechat-bottom-icon4.png) no-repeat
+}
+
+.wechat-input {
+    height: 120px;
+    background: #fff;
+    border-radius: 15px;
+    flex: 1;
+    text-indent: -9999px;
+    margin: 0 32px
+}
+
+.wechat-input-say {
+    color: #1a1a1a;
+    font-size: 48px;
+    text-indent: 0;
+    text-align: center;
+    line-height: 120px;
+    font-weight: 500
+}
+
+.phone-body {
+    position: absolute;
+    top: 264px;
+    bottom: 269px;
+    left: 0;
+    right: 0;
+    -webkit-overflow-scrolling: touch;
+    overflow-y: scroll
+}
+
+.wechat-content {
+    padding: 36px
+}
+
+.wechat-dialog {
+    margin-bottom: 50px;
+    position: relative;
+    display: flex
+}
+
+.wechat-dialog-face {
+    width: 123px;
+    height: 123px;
+    background: #f1f1f1;
+    border-radius: 15px;
+    background-size: cover;
+    background-repeat: no-repeat;
+    position: absolute;
+    background-position: center;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    justify-content: center
+}
+
+.wechat-dialog-face img {
+    width: 100%
+}
+
+.wechat-dialog-right {
+    justify-content: flex-end
+}
+
+.wechat-dialog-right .wechat-dialog-face {
+    right: 0
+}
+
+.wechat-dialog-text {
+    background: #fff;
+    padding: 28px 38px;
+    font-size: 48px;
+    border-radius: 15px;
+    margin-right: 140px;
+    word-break: break-all;
+    margin-left: 160px;
+    display: inline-block;
+    position: relative;
+    line-height: normal;
+    min-height: 123px
+}
+
+.wechat-dialog-right .wechat-dialog-text {
+    background: #98e970;
+    margin-left: 140px;
+    margin-right: 160px
+}
+
+.wechat-dialog-text:after {
+    content: '';
+    background: #fff;
+    width: 24px;
+    height: 24px;
+    border-bottom-left-radius: 4px;
+    top: 50px;
+    left: -12px;
+    position: absolute;
+    transform: rotate(45deg)
+}
+
+.wechat-dialog-right .wechat-dialog-text:after {
+    background: #98e970;
+    left: auto;
+    right: -10px;
+    border-top-right-radius: 4px;
+    border-bottom-left-radius: 0
+}
+
+.wechat-dialog-notice {
+    font-size: 36px;
+    color: #a6a6a6;
+    display: flex;
+    justify-content: center;
+    flex: 1
+}
+
+.a-wechat-dialog-del,
+.a-wechat-dialog-del:focus,
+.a-wechat-dialog-del:hover {
+    width: 60px;
+    height: 60px;
+    background: red;
+    border-radius: 30px;
+    display: block;
+    position: absolute;
+    color: #fff;
+    line-height: 60px;
+    text-align: center;
+    font-size: 30px;
+    left: 90px;
+    top: -30px;
+    display: none
+}
+
+.a-wechat-dialog-menu {
+    display: flex;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+    border-radius: 15px;
+    background: #263238;
+    top: -84px;
+    display: none
+}
+
+.a-wechat-dialog-menu:after {
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: #263238;
+    position: absolute;
+    transform: rotate(45deg) translateX(-50%);
+    border-radius: 6px;
+    left: 50%;
+    margin-left: -5px;
+    bottom: -20px
+}
+
+.a-wechat-dialog-menu a {
+    font-size: 36px;
+    height: 90px;
+    line-height: 90px;
+    color: #fff;
+    padding: 0 30px;
+    border-right: 1px rgba(163, 175, 183, .9) solid;
+    position: relative;
+    z-index: 99999
+}
+
+.wechat-dialog-right .a-wechat-dialog-del {
+    right: 90px;
+    left: auto
+}
+
+.wechat-dialog:hover .a-wechat-dialog-del {
+    display: block
+}
+
+.wechat-dialog:hover .a-wechat-dialog-menu {
+    display: flex
+}
+
+.wechat-dialog-notice span {
+    display: flex
+}
+
+.wechat-dialog-notice span.wechat-dialog-notice-has-bg {
+    background: rgba(255, 255, 255, .5);
+    color: #151414;
+    padding: 10px 17px;
+    border-radius: 15px
+}
+
+.wechat-dialog-notice span.wechat-dialog-notice-system {
+    padding: 10px 30px
+}
+
+.wechat-dialog-notice span .wechat-dialog-notice-redp-icon {
+    width: 45px;
+    height: 51px;
+    background: url(../images/wechat-redp-icon1.png);
+    margin-right: 18px
+}
+
+.wechat-dialog-notice span em {
+    font-style: normal;
+    color: #ef9d49
+}
+
+.wechat-dialog .wechat-dialog-trans {
+    background: #f79c46;
+    width: 700px;
+    padding-top: 0;
+    padding-bottom: 0
+}
+
+.wechat-dialog .wechat-dialog-trans:after {
+    background: #f79c46
+}
+
+.wechat-dialog .wechat-dialog-trans-get,
+.wechat-dialog .wechat-dialog-trans-get:after {
+    background: #f8e2c6
+}
+
+.wechat-dialog .wechat-dialog-trans-content {
+    display: flex;
+    height: 192px;
+    align-items: center;
+    position: relative
+}
+
+.wechat-dialog .wechat-dialog-trans-content:after {
+    content: '';
+    background: #f0b36f;
+    position: absolute;
+    width: 100%;
+    height: 1px;
+    bottom: 0
+}
+
+.wechat-dialog .wechat-dialog-trans-get .wechat-dialog-trans-content:after {
+    background: #f9e7d1
+}
+
+.wechat-dialog .wechat-dialog-trans-content i {
+    width: 120px;
+    height: 120px;
+    background: url(../images/wechat-trans-icon1.png) no-repeat
+}
+
+.wechat-dialog .wechat-dialog-redp-content i {
+    width: 102px;
+    background-image: url(../images/wechat-trans-icon3.png);
+    margin-left: 9px
+}
+
+.wechat-dialog .wechat-dialog-trans-get .wechat-dialog-trans-content i {
+    background-image: url(../images/wechat-trans-icon2.png)
+}
+
+.wechat-dialog .wechat-dialog-trans-get .wechat-dialog-trans-content.wechat-dialog-redp-content i {
+    background-image: url(../images/wechat-trans-icon4.png)
+}
+
+.wechat-dialog-trans-content div {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    margin-left: 30px;
+    overflow: hidden
+}
+
+.wechat-dialog-trans-content.wechat-dialog-redp-content div {
+    margin-left: 31px;
+    overflow: hidden
+}
+
+.wechat-dialog-trans-content div span {
+    font-size: 48px;
+    color: #fff;
+    margin-top: -9px;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.wechat-dialog-trans-content div font {
+    font-size: 36px;
+    color: #fff;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis
+}
+
+.wechat-dialog-trans-bottom {
+    height: 71px;
+    align-items: center;
+    display: flex
+}
+
+.wechat-dialog-trans-bottom span {
+    font-size: 36px;
+    color: #faecda
+}
+
+.wechat-dialog-trans-get .wechat-dialog-trans-bottom span {
+    color: #fff
+}
+
+.wechat-dialog-image {
+    border: 1px #d5d5d5 solid;
+    padding: 0;
+    background: 0 0;
+    overflow: hidden
+}
+
+.wechat-dialog-image-noborder {
+    border: none
+}
+
+.wechat-dialog-image img {
+    max-width: 420px;
+    max-height: 420px
+}
+
+.wechat-dialog-image:after {
+    display: none
+}
+
+.wechat-dialog-voice {
+    display: flex;
+    align-items: center
+}
+
+.wechat-dialog-voice i {
+    width: 34px;
+    height: 49px;
+    background: url(../images/wechat-voice-icon1.png) no-repeat;
+    margin-right: 30px;
+    margin-left: 16px
+}
+
+.wechat-dialog-voice span {
+    font-size: 42px;
+    padding-right: 20px
+}
+
+.wechat-dialog-voice em {
+    width: 25px;
+    height: 25px;
+    border-radius: 50%;
+    background: #e75e58;
+    position: absolute;
+    right: -61px
+}
+
+.wechat-dialog-right .wechat-dialog-voice i {
+    background-image: url(../images/wechat-voice-icon2.png);
+    margin-left: 30px;
+    margin-right: 16px
+}
+
+.wechat-dialog-right .wechat-dialog-voice span {
+    text-align: right;
+    padding-left: 20px;
+    padding-right: 0
+}
+
+.dialog-user {
+    padding: 20px 5px
+}
+
+.dialog-user-items {
+    display: flex;
+    flex-wrap: wrap;
+    border-bottom: 1px #eee dotted
+}
+
+.dialog-user-item {
+    margin-right: 20px;
+    margin-bottom: 20px
+}
+
+.dialog-user-item-add,
+.dialog-user-item-add:active,
+.dialog-user-item-add:focus {
+    width: 98px;
+    height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px #ccc dotted;
+    color: #ccc;
+    font-size: 40px;
+    text-decoration: none
+}
+
+.dialog-user-item-add:hover {
+    text-decoration: none;
+    color: #999;
+    border-color: #999
+}
+
+.dialog-user-face {
+    align-items: center;
+    display: flex;
+    flex-direction: column;
+    position: relative
+}
+
+.dialog-user-face i {
+    width: 60px;
+    height: 60px;
+    background: #eee;
+    display: block;
+    background: url(../images/logo.png);
+    background-size: cover;
+    background-position: center
+}
+
+.dialog-user-face .dialog-user-face-a {
+    position: relative
+}
+
+.dialog-user-face input[type=text] {
+    width: 80px;
+    text-align: center;
+    margin-top: 10px;
+    border: 1px #eee solid;
+    height: 30px;
+    line-height: 30px;
+    border-radius: 2px;
+    font-size: 12px
+}
+
+.dialog-user-face input[type=file] {
+    width: 60px;
+    height: 60px;
+    position: absolute;
+    cursor: pointer;
+    opacity: 0
+}
+
+.dialog-user-content {
+    padding: 20px 0
+}
+
+.dialog-user-content .btn-groups {
+    display: flex
+}
+
+.dialog-user-content .btn-group {
+    display: flex;
+    flex: 1;
+    margin-bottom: 10px;
+    margin-right: 10px;
+    max-width: 300px
+}
+
+.dialog-user-content .btn-group .btn {
+    flex: 1
+}
+
+.dialog-user-content-panel2 {
+    display: flex;
+    align-items: center
+}
+
+.dialog-user-content-panel2 input {
+    flex: 1
+}
+
+.dialog-user-delete,
+.dialog-user-delete:hover {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background: red;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: #fff;
+    right: 0;
+    top: -10px
+}
+
+.dialog-user-select {
+    position: absolute;
+    width: 24px;
+    height: 24px;
+    border-radius: 12px;
+    display: flex;
+    right: 0;
+    bottom: 32px;
+    text-indent: -9999px;
+    border: 1px #eee solid;
+    background: #fff
+}
+
+.dialog-user-selected {
+    background-image: url(../images/user-checked.png);
+    background-size: cover
+}
+
+.dialog-user-title {
+    font-size: 14px;
+    padding: 0 0 20px 0
+}
+
+.dialog-user-title font {
+    color: red
+}
+
+.dialog-user-content-title {
+    font-size: 14px;
+    padding-top: 20px
+}
+
+.dialog-user-content-bar {
+    border-bottom: 1px #eee dotted;
+    margin-bottom: 20px
+}
+
+textarea.edit-dialog-text {
+    height: 100px
+}
+
+.btn-send-image {
+    position: relative
+}
+
+.btn-send-image input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    left: 0;
+    top: 0;
+    opacity: 0;
+    cursor: pointer
+}
+
+#sortableList>.wechat-dialog {
+    cursor: move
+}
+
+#sortableList>.wechat-dialog.dragging {
+    visibility: visible;
+    opacity: .3
+}
+
+a.a-phone-set-bg,
+a.a-phone-set-bg:active,
+a.a-phone-set-bg:focus {
+    width: 98px;
+    min-height: 98px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 1px #ccc dotted;
+    color: #ccc;
+    text-decoration: none;
+    font-size: 40px;
+    position: relative;
+    cursor: pointer
+}
+
+a.a-phone-set-bg font {
+    position: absolute
+}
+
+a.a-phone-set-bg span {
+    font-size: 12px;
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    background-color: red;
+    border-radius: 50%;
+    color: #fff;
+    line-height: 20px;
+    text-align: center;
+    right: -10px;
+    top: -10px
+}
+
+.a-phone-set-bg input {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    cursor: pointer
+}
+
+.img-phone-set-bg {
+    width: 100%;
+    position: relative
+}
+
+.app-list {
+    display: flex;
+    padding: 0 10px;
+    flex-wrap: wrap
+}
+
+.app-list a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 50px;
+    margin-top: 30px
+}
+
+.app-list a i {
+    width: 100px;
+    height: 100px;
+    background: #00d40d;
+    border-radius: 10px;
+    background-image: url(../images/icon-wechat.png);
+    background-repeat: no-repeat;
+    background-size: 60px;
+    background-position: center
+}
+
+.app-list a span {
+    margin-top: 10px;
+    color: #666;
+    font-size: 12px
+}
+
+.app-list a i.alipay-chat {
+    background-image: url(../images/icon-alipay-chat.png);
+    background-color: #0ae
+}
+
+.app-list-wrap {
+    padding-bottom: 40px
+}
+
+.app-list-wrap h3 {
+    font-size: 18px;
+    font-weight: 400;
+    margin: 0 10px;
+    border-bottom: 1px #f1f1f1 solid;
+    padding-bottom: 15px;
+    margin-top: 30px
+}
+
+.modal-lightbox.lightbox-with-caption .caption {
+    background: rgba(0, 0, 0, .6);
+    opacity: 1
+}
+
+@media screen and (max-width:1024px) {
+    .edit-content {
+        flex-direction: column
+    }
+
+    .tab {
+        min-width: 800px
+    }
+
+    .phone-content {
+        transform: scale(.3)
+    }
+
+    .btn-save {
+        left: 20px
+    }
+
+    .main-header {
+        display: block
+    }
+
+    .dialog-user-content .btn-groups {
+        flex-direction: column
+    }
+
+    .dialog-user-content .btn-group,
+    .dialog-user-items,
+    textarea.edit-dialog-text {
+        width: 320px
+    }
+
+    .main-header .navbar-brand {
+        display: none
+    }
+
+    .app-list a i {
+        width: 60px;
+        height: 60px;
+        border-radius: 3px;
+        background-size: 45px
+    }
+
+    .app-list a {
+        margin-right: 0;
+        width: 33.333%
+    }
+}
