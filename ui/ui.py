@@ -227,7 +227,9 @@ class UI(ft.Row):
         self.images.clear()
         self.ocrs.clear()
         main_path = WORK_PATH.joinpath(self.keyword.value)
-        self.images.extend(glob.glob(str(main_path.joinpath("*.jpeg"))))
+        self.images.extend(glob.glob(str(main_path.joinpath("*.jpeg"))) +
+                           glob.glob(str(main_path.joinpath("*.jpg"))) +
+                           glob.glob(str(main_path.joinpath("*.png"))))
         self.images.sort(key=lambda e: int(os.path.split(e)[-1].split(".")[0]))
         self.index = 0
         self._set_image()

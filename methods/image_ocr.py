@@ -11,14 +11,14 @@ from utils import WORK_PATH
 
 class ImageOcrClient:
     def __init__(self):
-        self.model = CnOcr(
-            det_model_name="ch_PP-OCRv3_det",
-        )
+        self.model = CnOcr()
 
     def start(self, keyword, logger=logging.getLogger()):
         main_path = WORK_PATH.joinpath(keyword)
         main_path.mkdir(exist_ok=True, parents=True)
-        files = glob.glob(str(main_path.joinpath("*.jpeg")))
+        files = (glob.glob(str(main_path.joinpath("*.jpeg"))) +
+                 glob.glob(str(main_path.joinpath("*.jpg"))) +
+                 glob.glob(str(main_path.joinpath("*.png"))))
         target_path = main_path.joinpath("ocr")
         target_path.mkdir(exist_ok=True)
         for f in files:
