@@ -17,6 +17,7 @@ ___
 ![](docs/4.png)
 5. 点击生成，等待生成完成
 ![](docs/5.png)
+### 也可以使用[release](https://github.com/cuifengcn/wechat-video-generate/releases)中打包好的文件
 
 ### 参考项目
 [short-video-generate](https://github.com/ayuLiao/short-video-generate)
