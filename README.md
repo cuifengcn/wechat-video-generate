@@ -1,5 +1,15 @@
-# wechat-video-generate
+<h1 align="center">wechat-video-generate</h1>
+
+<p align="center">
+  <a href="#下载">
+    <img src="https://img.shields.io/github/downloads/cuifengcn/wechat-video-generate/total?style=flat-square" alt="forks">
+  </a>
+  <img src="https://img.shields.io/github/stars/cuifengcn/wechat-video-generate?style=flat-square" alt="stars">
+  <img src="https://img.shields.io/github/forks/cuifengcn/wechat-video-generate?style=flat-square" alt="forks">
+</p>
+
 ___
+
 ## 微信对话视频一键生成器
 ### 使用方法
 1. 下载本项目代码
