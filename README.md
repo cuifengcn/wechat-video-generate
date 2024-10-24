@@ -8,6 +8,7 @@
   <img src="https://img.shields.io/github/forks/cuifengcn/wechat-video-generate?style=flat-square" alt="forks">
 </p>
 
+> 此工具已不再更新
 ___
 
 ## 微信对话视频一键生成器
